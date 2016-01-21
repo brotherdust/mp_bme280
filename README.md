@@ -19,7 +19,7 @@ import bme280
 i2c = machine.I2C(0, pins=('GP11', 'GP10'))
 bme = bme280.BME280(i2c=i2c)
 
-print(b.temperature, b.pressure, b.humidity)
+print(bme.temperature, bme.pressure, bme.humidity)
 ```
 
 #### Detailed usage ####
