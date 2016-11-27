@@ -98,12 +98,12 @@ class Device:
     def writeRaw8(self, value):
         """Write an 8-bit value on the bus (without register)."""
         value = value & 0xFF
-        self._i2c.writeto(self._address, value)
+        self._i2c.writeto(self._address, value.to_bytes(1))
 
     def write8(self, register, value):
         """Write an 8-bit value to the specified register."""
         value = value & 0xFF
-        self._i2c.writeto_mem(self._address, register, value)
+        self._i2c.writeto_mem(self._address, register, value.to_bytes(1))
 
     def write16(self, register, value):
         """Write a 16-bit value to the specified register."""
