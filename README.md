@@ -13,10 +13,10 @@ See the datasheet at https://www.adafruit.com/datasheets/BST-BME280_DS001-10.pdf
 Use ftp to copy `bme280.py` to the `flash` or `flash/lib` directory on the board. Then:
 
 ``` python
-import machine
+from machine import I2C
 import bme280
 
-i2c = machine.I2C(0, pins=('GP11', 'GP10'))
+i2c = I2C(0)
 bme = bme280.BME280(i2c=i2c)
 
 print(bme.temperature, bme.pressure, bme.humidity)
