@@ -2,13 +2,13 @@
 
 This is a driver for the Bosch BME280 temperature/pressure/humidity sensor, for use with MicroPython-based boards.
 
-### About the BME280 ###
+## About the BME280 ##
 
 The Bosch BME280 Environmental Sensor is a combined temperature, pressure and humidity sensor. It can communicate via I2C or SPI; this driver uses I2C.
 
-See the datasheet at https://www.adafruit.com/datasheets/BST-BME280_DS001-10.pdf for details.
+See [datasheets/BST-BME280_DS001-10.pdf](/blob/master/docs/datasheets/BST-BME280_DS001-10.pdf) or https://www.adafruit.com/datasheets/BST-BME280_DS001-10.pdf for details.
 
-### Using the library ###
+## Usage ##
 
 Use ftp to copy `bme280.py` to the `flash` or `flash/lib` directory on the board. Then:
 
@@ -16,14 +16,13 @@ Use ftp to copy `bme280.py` to the `flash` or `flash/lib` directory on the board
 from machine import I2C
 import bme280
 
-i2c = I2C(0)
-bme = bme280.BME280(i2c=i2c)
+i2c = I2C(0, I2C.MASTER, baudrate=400000)
+sensor = bme280.BME280(i2c=i2c)
 
-print(bme.temperature, bme.pressure, bme.humidity)
+print(sensor.temperature, sensor.pressure, sensor.humidity)
 ```
 
-#### Detailed usage ####
-
+## Detailed Usage ##
 The `temperature`, `pressure` and `humidity` properties are convenience functions that provide human-readable string values to quickly check that the sensor is working. In practice, the methods to use are:
 
 * `get_temperature()`: returns the temperature in hundredths of a degree celsius. For example, the value 2534  indicates a temperature of 25.34 degrees.
