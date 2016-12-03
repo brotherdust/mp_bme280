@@ -6,8 +6,6 @@ This is a driver for the Bosch BME280 temperature/pressure/humidity sensor, for 
 
 The Bosch BME280 Environmental Sensor is a combined temperature, pressure and humidity sensor. It can communicate via I2C or SPI; this driver uses I2C.
 
-See [datasheets/BST-BME280_DS001-10.pdf](/blob/master/docs/datasheets/BST-BME280_DS001-10.pdf) or https://www.adafruit.com/datasheets/BST-BME280_DS001-10.pdf for details.
-
 ## Usage ##
 
 Use ftp to copy `bme280.py` to the `flash` or `flash/lib` directory on the board. Then:
